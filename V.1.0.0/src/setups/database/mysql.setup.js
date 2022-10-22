@@ -1,6 +1,6 @@
-const log = require('../logger');
+const {info, error} = require('../logger/logging.setup');
 const mysql = require("mysql2");
-require("dotenv").config();
+const models = require('../../model/mysqlModel.model');
 
 const mysqlConn = mysql.createPool({
     host: process.env.hostMySQL,
@@ -18,21 +18,21 @@ const WQuery = (query) => {
     return new Promise((res, rej) => {
         mysqlConn.query(query, function (err, result, fields) {
             if (err) {
-                log(data = {
+                error(data = {
                     'name': 'error',
                     'status': 304,
                     'message': `error occured while updating ${err}`,
                     'statusCode': 304
-                }, 'error');
+                });
                 rej("error occured");
             }
             else {
-                log(data = {
+                info(data = {
                     'name': 'success',
                     'status': 201,
                     'message': 'update query successfully completed',
                     'statusCode': 201
-                }, 'success');
+                });
                 res("successfully updated");
             }
         });
@@ -43,34 +43,38 @@ const RQuery = (query) => {
     return new Promise((res, rej) => {
         mysqlConn.query(query, function (err, result, fields) {
             if (err) {
-                log(data = {
+                error(data = {
                     'name': 'error',
                     'status': 304,
                     'message': `error occured while reading ${err}`,
                     'statusCode': 304
-                }, 'error');
+                });
                 res([]);
             }
             else if (result.length > 0) {
-                log(data = {
+                info(data = {
                     'name': 'success',
                     'status': 201,
                     'message': 'read query successfully completed',
                     'statusCode': 201
-                }, 'success');
+                });
                 res(result);
             }
             else {
-                log(data = {
+                info(data = {
                     'name': 'success',
                     'status': 201,
                     'message': 'read query successfully completed',
                     'statusCode': 201
-                }, 'success');
+                });
                 res([]);
             }
         });
     });
 }
 
-module.exports = { readQuery, writeQuery }
+const checkSchema = () => {
+    WQuery(models.onboard);
+}
+
+module.exports = { RQuery, WQuery, checkSchema }
