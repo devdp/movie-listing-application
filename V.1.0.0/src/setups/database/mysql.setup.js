@@ -75,6 +75,8 @@ const RQuery = (query) => {
 
 const checkSchema = () => {
     WQuery(models.onboard);
+    WQuery(models.moviesListing);
+
 }
 
 module.exports = { RQuery, WQuery, checkSchema }
