@@ -5,7 +5,7 @@ const dbValidation = async () => {
     var Tables_in_base = await RQuery(`
         show tables from ${process.env.databaseMySQL};
     `)
-    if (Tables_in_base.length >= 1) {
+    if (Tables_in_base.length >= 2) {
         info(data = {
             "funcName": "dbValidation()",
             "msg": "All required tables exists",
