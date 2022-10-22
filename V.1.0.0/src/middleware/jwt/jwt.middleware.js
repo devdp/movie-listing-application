@@ -14,7 +14,7 @@ const validateToken = async (req, res, next) => {
         })
         return
     }
-    jwt.verify(token, process.env.access_token_secret, (err, username) => {
+    jwt.verify(token, process.env.access_token_secret, (err, email) => {
         if(err){
             res.send({
                 'type': 'authentication',
@@ -26,7 +26,7 @@ const validateToken = async (req, res, next) => {
             })  
             return
         }
-        req.username = username
+        req.email = email
         next()
     })
 }
