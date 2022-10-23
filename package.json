@@ -24,6 +24,7 @@
     "jsonwebtoken": "^8.5.1",
     "mysql2": "^2.3.3",
     "node-cache": "^5.1.2",
+    "path": "^0.12.7",
     "pino": "^8.7.0",
     "pino-pretty": "^9.1.1",
     "uuid": "^9.0.0"
