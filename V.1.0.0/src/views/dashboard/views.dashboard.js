@@ -155,5 +155,5 @@ const fetchMovies = async () => {
 
 const logOut = () => {
     localStorage.clear();
-    window.location.replace('/home/bramhesh/Development/Personal/movie-listing-application/V.1.0.0/src/views/login/views.login.html')
+    window.location.replace('http://localhost:3000/routes/v1/login')
 }
