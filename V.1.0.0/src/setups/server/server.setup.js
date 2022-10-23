@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors');
+const path = require('path');
 const { error, info } = require('../logger/logging.setup');
 const routes = require('../../routes');
 const dbValidation = require('../query/server.query.setup');
@@ -24,6 +25,10 @@ const setup = (uuid) => {
     dbValidation();
 
     app.use('/routes/v1', routes);
+
+    app.use('/static/login', express.static(path.join(__dirname,'../../views/login/')))
+    app.use('/static/signUp', express.static(path.join(__dirname,'../../views/signUp/')))
+    app.use('/static/dashboard', express.static(path.join(__dirname,'../../views/dashboard/')))
 
     app.use(function (req, res) {
         error(data = {
