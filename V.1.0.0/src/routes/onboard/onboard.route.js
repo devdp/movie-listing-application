@@ -1,4 +1,5 @@
 const route = require('express').Router();
+const path = require('path');
 const signUpQuery = require('../../setups/query/signUp.query.setup');
 const { error, info } = require('../../setups/logger/logging.setup')
 
@@ -29,6 +30,10 @@ route.post('/', async (req, res) => {
         res.send(result)
         return
     }
+})
+
+route.get('/', async (req, res) => {
+    res.sendFile(path.join(__dirname,'../../views/signUp/views.signUp.html'))
 })
 
 module.exports = route;
