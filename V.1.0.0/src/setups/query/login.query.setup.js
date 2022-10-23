@@ -36,7 +36,8 @@ const loginQuery = async (email, password) => {
                 'statusCode': 200,
                 'data': {
                     'fullname': userData[0].username,
-                    'email': userData[0].email
+                    'email': userData[0].email,
+                    'userId': userData[0].id
                 },
                 'token': {
                     'accessToken': generateAccessToken(userData[0].email),
