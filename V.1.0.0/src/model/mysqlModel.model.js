@@ -15,7 +15,8 @@ const models = {
                 rating int,
                 cast text,
                 genre varchar(50),
-                releaseDate timestamp   
+                releaseDate timestamp,
+                userId int   
             );`
     };
 
