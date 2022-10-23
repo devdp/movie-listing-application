@@ -1,4 +1,4 @@
-const baseUrl = "http://35.244.57.165:3000/routes/v1/"
+const baseUrl = "http://20.219.145.48:3000/routes/v1/"
 
 const addDiv = () => {
     document.getElementById('list').style.display = 'none';
@@ -155,5 +155,5 @@ const fetchMovies = async () => {
 
 const logOut = () => {
     localStorage.clear();
-    window.location.replace('http://35.244.57.165:3000/routes/v1/login')
+    window.location.replace('http://20.219.145.48:3000/routes/v1/login')
 }

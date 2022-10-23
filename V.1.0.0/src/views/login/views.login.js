@@ -1,4 +1,4 @@
-const baseUrl = "http://35.244.57.165:3000/routes/v1/"
+const baseUrl = "http://20.219.145.48:3000/routes/v1/"
 
 const login = async () => {
 
@@ -27,11 +27,11 @@ const login = async () => {
             localStorage.setItem('accessToken', response.token.accessToken)
             localStorage.setItem('refreshToken', response.token.refreshToken)
             localStorage.setItem('userId', response.data.userId)
-            window.location.replace('http://35.244.57.165:3000/routes/v1/dashboard')
+            window.location.replace('http://20.219.145.48:3000/routes/v1/dashboard')
         }
     });
 }
 
 const signUp = async () => {
-    window.location.replace('http://35.244.57.165:3000/routes/v1/onboard')
+    window.location.replace('http://20.219.145.48:3000/routes/v1/onboard')
 }

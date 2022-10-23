@@ -1,4 +1,4 @@
-const baseUrl = "http://35.244.57.165:3000/routes/v1/"
+const baseUrl = "http://20.219.145.48:3000/routes/v1/"
 
 const signUp = async () => {
 
@@ -22,10 +22,10 @@ const signUp = async () => {
 
     $.ajax(settings).done(function (response) {
         alert(response.msg)
-        window.location.replace('http://35.244.57.165:3000/routes/v1/onboard')
+        window.location.replace('http://20.219.145.48:3000/routes/v1/onboard')
     });
 }
 
 const login = async () => {
-    window.location.replace('http://35.244.57.165:3000/routes/v1/login')
+    window.location.replace('http://20.219.145.48:3000/routes/v1/login')
 }
